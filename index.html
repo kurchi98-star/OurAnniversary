@@ -6,7 +6,6 @@
 <title>Forever Us 💖</title>
 
 <style>
-/* ---------- GLOBAL ---------- */
 * {
   box-sizing: border-box;
 }
@@ -32,7 +31,7 @@ body {
   text-align: center;
 }
 
-/* ---------- HEARTS ---------- */
+/* Falling hearts */
 .heart {
   position: fixed;
   top: -20px;
@@ -49,7 +48,7 @@ body {
   }
 }
 
-/* ---------- CARDS ---------- */
+/* Cards */
 .card {
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(14px);
@@ -59,7 +58,7 @@ body {
   margin-bottom: 30px;
 }
 
-/* ---------- QUESTION ---------- */
+/* Text */
 h1 {
   font-size: 1.6rem;
   line-height: 1.4;
@@ -72,7 +71,7 @@ h1 {
   opacity: 0.9;
 }
 
-/* ---------- BUTTONS ---------- */
+/* Buttons */
 .buttons {
   display: flex;
   justify-content: center;
@@ -85,7 +84,6 @@ button {
   border-radius: 30px;
   border: none;
   cursor: pointer;
-  transition: transform 0.2s ease;
 }
 
 #yesBtn {
@@ -99,7 +97,7 @@ button {
   position: relative;
 }
 
-/* ---------- RESULT ---------- */
+/* Result */
 #result {
   display: none;
 }
@@ -117,7 +115,7 @@ button {
   margin-top: 16px;
 }
 
-/* ---------- SLIDESHOW ---------- */
+/* Slideshow */
 #slideshow {
   width: 80vw;
   max-width: 320px;
@@ -147,7 +145,7 @@ button {
 
 <div class="container">
 
-  <!-- QUESTION -->
+  <!-- Question -->
   <div class="card" id="question">
     <h1>Will you marry me again on<br>12/02/2026? 💍</h1>
     <div class="subtitle">
@@ -160,7 +158,7 @@ button {
     </div>
   </div>
 
-  <!-- RESULT -->
+  <!-- Result -->
   <div class="card" id="result">
     <div class="message">
       You are my entire universe. 🌍
@@ -179,30 +177,30 @@ button {
       Marriage subscription renewed till eternity ♾️
     </div>
 
-    <!-- SLIDESHOW -->
+    <!-- Slideshow -->
     <div id="slideshow">
-      <img src="images/img1.jpg" class="active">
-      <img src="images/img2.jpg">
-      <img src="images/img3.jpg">
-      <img src="images/img4.jpg">
-      <img src="images/img5.jpg">
-      <img src="images/img6.jpg">
-      <img src="images/img7.jpg">
-      <img src="images/img8.jpg">
-      <img src="images/img9.jpg">
-      <img src="images/img10.jpg">
+      <img src="images/photo1.jpg" class="active">
+      <img src="images/photo2.jpg">
+      <img src="images/photo3.jpg">
+      <img src="images/photo4.jpg">
+      <img src="images/photo5.jpg">
+      <img src="images/photo6.jpg">
+      <img src="images/photo7.jpg">
+      <img src="images/photo8.jpg">
+      <img src="images/photo9.jpg">
+      <img src="images/photo10.jpg">
     </div>
   </div>
 
 </div>
 
-<!-- MUSIC -->
+<!-- Music -->
 <audio id="bgMusic" loop>
-  <source src="music/song.mp3" type="audio/mpeg">
+  <source src="music/Ebhabe_golpo_hok.mp3" type="audio/mpeg">
 </audio>
 
 <script>
-/* ---------- FALLING HEARTS ---------- */
+/* Hearts */
 function createHeart() {
   const heart = document.createElement("div");
   heart.className = "heart";
@@ -211,13 +209,11 @@ function createHeart() {
   heart.style.animationDuration = 3 + Math.random() * 4 + "s";
   heart.style.fontSize = 14 + Math.random() * 18 + "px";
   document.body.appendChild(heart);
-
   setTimeout(() => heart.remove(), 7000);
 }
-
 setInterval(createHeart, 350);
 
-/* ---------- BUTTON LOGIC ---------- */
+/* Buttons */
 const yesBtn = document.getElementById("yesBtn");
 const noBtn = document.getElementById("noBtn");
 const question = document.getElementById("question");
@@ -230,14 +226,13 @@ yesBtn.addEventListener("click", () => {
   music.play();
 });
 
-/* NO button runs away */
 noBtn.addEventListener("mouseover", () => {
   const x = Math.random() * 200 - 100;
   const y = Math.random() * 200 - 100;
   noBtn.style.transform = `translate(${x}px, ${y}px)`;
 });
 
-/* ---------- SLIDESHOW ---------- */
+/* Slideshow */
 const slides = document.querySelectorAll("#slideshow img");
 let index = 0;
 
